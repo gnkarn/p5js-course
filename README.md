@@ -13,6 +13,7 @@ y luego activarlo con :source ~/.zshrc
 
 
 instalar p5 manager  https://www.npmjs.com/package/p5-manager
+necesita NODE, si se instala Global , entonces necesita sudo
 npm install p5-manager -g
 
 instalacion de live server
@@ -28,6 +29,7 @@ git branch source
 git branch -v  , da mas info
 git push
 
+desde el directorio donde voy a colocar los proyectos , se ejecuta:
 uso p5-manager para dar de alta el proyecto desde CLI : p5 generate --bundle "p5jsProy_prototypes"
  p5js-course git:(p5js-proy) ✗ code .   abre  el editor
  p5js-course git:(p5js-proy) ✗ live-server     inicia el servidor
