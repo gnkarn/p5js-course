@@ -18,12 +18,12 @@ class NeuralNetwork {
 
     this.weights_ih = new Matrix(this.hidden_nodes, this.input_nodes);
     this.weights_ho = new Matrix(this.output_nodes, this.hidden_nodes);
-    this.weights_ih.randomize() ;
-    this.weights_ho.randomize() ;
+    this.weights_ih.randomize(10) * 2 - 1;
+    this.weights_ho.randomize(10) * 2 - 1;
     this.bias_h = new Matrix(this.hidden_nodes, 1);
     this.bias_o = new Matrix(this.output_nodes, 1);
-    this.bias_h.randomize();
-    this.bias_o.randomize();
+    this.bias_h.randomize(10);
+    this.bias_o.randomize(10);
     this.learning_rate = 0.1;
   }
   feedforward(input_array) {
