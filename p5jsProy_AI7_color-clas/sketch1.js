@@ -8,6 +8,8 @@ let lossP;
 let rslider, gslider, bslider;
 
 let labelP;
+let tensorsP;
+
 
 let labelList = [
   'red-ish',
@@ -30,6 +32,7 @@ function preload() {
 function setup() {
   lossP = createP('loss');
   labelP = createP('color: ');
+  tensorsP= createP('tensors:');
 
   rslider = createSlider(0, 255, 0, 1);
   gslider = createSlider(0, 255, 0, 1);
@@ -120,16 +123,18 @@ function draw() {
   stroke(255);
   strokeWeight(4);
 
-  const xs = tf.tensor2d([
-    [r / 255, g / 255, b / 255]
-  ]);
-  let results = model.predict(xs);
-  //results.print();
-  let index = results.argMax(1).dataSync();
-  // index.print();
-  let label = labelList[index];
-  labelP.html('color :' + label);
-
-
+  tf.tidy(() => {
+    const xs = tf.tensor2d([
+      [r / 255, g / 255, b / 255]
+    ]);
+    let results = model.predict(xs);
+    //results.print();
+    let index = results.argMax(1).dataSync();
+    // index.print();
+    let label = labelList[index];
+    labelP.html('color :' + label);
+  })
+  tensorsP.html('tensors :' + tf.memory().numTensors);
+//console.log(tf.memory().numTensors);
 
 }
