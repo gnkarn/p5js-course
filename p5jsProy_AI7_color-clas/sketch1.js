@@ -1,6 +1,6 @@
 // color classifier , usando json file
 // funciona muy bien !
-
+// capitulo 7 de nature of code , neural networks with tensor flowjs
 let data;
 tf.disableDeprecationWarnings();
 let xs, ys;
