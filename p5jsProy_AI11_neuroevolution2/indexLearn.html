@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>p5jsProy_AI11_neuroevolution</title>
+
+	<script src="libraries/p5.js"></script>
+	<script src="libraries/p5.dom.js"></script>
+	<script language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/addons/p5.dom.js"></script>
+	<script language="javascript" type="text/javascript" src="flappy/bird.js"></script>
+	<script language="javascript" type="text/javascript" src="flappy/pipe.js"></script>
+	<script src="matrix.js"></script>
+	<script src="ga.js"></script>
+	<script src="nnLibrary.js"></script>
+	<script src="sketch.js"></script>
+
+
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			
+		}
+
+		canvas {
+			margin: auto;
+		}
+	</style>
+</head>
+
+<body>
+<div id="canvascontainer">
+	</div>
+	<p>
+		speed: <input id="speedSlider" type="range" min="1" max="10" value="1" ><span id="speed"> 1</span>
+		<br/> high score : <span id="hs">0</span>
+		<br/>all time high score:<span id="ahs">0</span>
+	</p>
+	<p>
+		<button id="best">run best so far </button>
+	</p>
+</body>
+
+</html>
