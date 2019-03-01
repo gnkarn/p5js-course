@@ -8,7 +8,7 @@
 // presionar varias veces sad , con una imagen que lo represente
 // mantener presionado train , hasta finalizar 
 // luego mostrar las imagenes y ver el label
-
+// incluye una forma de guardar el modelo en download.
 
 let mobilenet;
 let classifier;
@@ -17,9 +17,22 @@ let label = 'test';
 let ukeButton;
 let whistleButton;
 let trainButton;
+let saveButton;
+let loaded = false;
 
 function modelReady() {
 	console.log('Model is ready!!!');
+	// carga el modelo guardado luego del training
+	// ojo el path dependera de cual es la raiz del server
+	classifier.load('/p5jsProy_ML5_feature_extraction/model.json', customModelReady); // carga el modelo guardado
+	
+}
+// si guarde un file de training , entonces esta funcion tiene sentido
+// y usara el modelo guardado para clasificar 
+function customModelReady(){
+		console.log('Custom Model is ready!!!');
+	loaded = true;
+	classifier.classify(gotResults)
 }
 
 function videoReady() {
@@ -27,7 +40,7 @@ function videoReady() {
 }
 
 function whileTraining(loss) {
-	if (loss == null) {
+	if (loss == null ) {
 		console.log('Training Complete');
 		classifier.classify(gotResults);
 	} else {
@@ -67,7 +80,10 @@ function setup() {
 	trainButton.mousePressed(function () {
 		classifier.train(whileTraining);
 	});
-
+	saveButton = createButton('save');
+	saveButton.mousePressed(function () {
+		classifier.save();
+	});
 
 }
 
