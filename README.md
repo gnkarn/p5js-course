@@ -37,5 +37,5 @@ uso p5-manager para dar de alta el proyecto desde CLI : p5 generate --bundle "p5
 luego en terminal  git push
 y desde GitHub  hago la comparación y el merge desde el branch que uso para desarrollo ., al branch donde lo publico git-pages
 
-link para demos:
-https://github.com/gnkarn/p5js-course/settings/
+link para demos: change project name to test other example
+https://gnkarn.github.io/p5js-course/p5jsProy_fluid_sim
