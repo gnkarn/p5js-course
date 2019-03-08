@@ -36,7 +36,7 @@ class Arc {
 
 function setup() {
 	pixelDensity(2);
-	createCanvas(600, 300);
+	createCanvas(windowWidth, windowHeight);
 	background(0);
 	numbers[index] = true;
 	sequence.push(index);
