@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>p5jsProy_api-Fetch</title>
+
+	<script src="libraries/p5.js"></script>
+	<script src="libraries/p5.dom.js"></script>
+	<script src="libraries/p5.sound.js"></script>
+	<script src="sketch.js"></script>
+
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+		}
+
+		canvas {
+			margin: auto;
+		}
+	</style>
+</head>
+
+<body>
+	<img src="" id="rainbow" />
+	<script>
+		console.log('about to fetch a rainbow');
+
+		catchRainbow()
+			.then(response => {
+				console.log('listo');
+			})
+			.catch(error => {
+				console.log('error');
+				console.error(error);
+			});;
+		async function catchRainbow() {
+			const response = await fetch('rainbow.png');
+			const blob = await response.blob();
+			document.getElementById('rainbow').src = URL.createObjectURL(blob);
+		}
+		// fetch('rainbow.png').then(response=>{
+		// 	console.log(response);
+		// 	return response.blob(); // convierte en img blob
+		// }).then(blob => {  // response segunda promise 
+		// 	console.log(blob);
+		// 	document.getElementById('rainbow').src=URL.createObjectURL(blob);
+		// })
+		// .catch(error => {
+		// 	console.log('error');
+		// 	console.error(error);
+		// });
+	</script>
+</body>
+
+</html>
