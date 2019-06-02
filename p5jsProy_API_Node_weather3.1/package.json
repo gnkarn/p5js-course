@@ -1,0 +1,21 @@
+{
+  "name": "p5jsproy_api_node_weather3.1",
+  "version": "1.0.0",
+  "description": "node api weather",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "api",
+    "node"
+  ],
+  "author": "gnk",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "nedb": "^1.8.0",
+    "node-fetch": "^2.6.0"
+  }
+}

@@ -20,6 +20,7 @@ function preload() {
 	// let collapse_aggregation;
 	// let metadata ;
 	let start_date = "&start_date=2017-01";
+	let end_date = "&end_date="+ year()+"-"+month();
 	let decimal = "&decimal=."
 	let url1 = API_BASE_URL + "/series/?" + id + representation_mode + start_date + form + decimal;
 	let url2 = API_BASE_URL + "/series/?ids=168.1_T_CAMBIOR_D_0_0_26&start_date=2018-07&limit=1000";
