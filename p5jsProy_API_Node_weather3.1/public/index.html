@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+</html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.dom.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>p5jsProy_node2.1</title>
+
+	<!-- https://leafletjs.com/download.html-->
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+		integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+		crossorigin="" />
+	<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+		integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+		crossorigin=""></script>
+
+</head>
+
+<body>
+
+	<h1> the weather Here </h1>
+	<div><a href="/"> enter </a> - <a href="/logs/index.html">list </a></div>
+	<p>
+		el clima aqui latitud <span id="latitude"></span>&deg, long: <span id="longitude"></span>&deg es <span
+			id="summary"></span> y la temperatura es de
+		<span id="temperature"></span> &deg C , y tipo de cambio <span id="tipoDeCambio"></span> $
+	</p>
+	<button id='find-me'>Show my location</button><br />
+	<script src="sketch.js"></script>
+
+		<div>
+			<a href="/"> check in</a> - <a href="/checkins">view checkins</a>
+		</div>
+		<div id="checkinMap"> </div>
+		<script src="/logs/logs.js"></script>
+
+
+		<!-- GRAFICO DATOS GOB EJEMPLO -->
+	<script type='text/javascript'
+		src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_1.17.1/dist/js/components.js'>
+	</script>
+	<link rel='stylesheet' type='text/css'
+		href='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_1.17.1/dist/css/components.css' />
+	<div id="root"></div>
+
+	<script>
+		// api de graficos de gobierno ver TSComponents
+		window.onload = function () {
+			TSComponents.Graphic.render('root', {
+				graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?ids=175.1_DR_ESTANSE_0_0_20&limit=5000&last=1000',
+				chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
+				},
+				zoom: true,
+				datePickerEnabled: true,
+				displayUmits: true,
+				locale: 'AR',
+				navigator: true,
+				title: 'Dólar Estadounidense',
+				source: 'Ministerio de Hacienda',
+				chartTypes: {
+					"175.1_DR_ESTANSE_0_0_20": "line"
+				},
+			})
+		}
+	</script>
+</body>
+
+</html>

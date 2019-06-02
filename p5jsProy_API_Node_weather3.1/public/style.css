@@ -1,0 +1,14 @@
+p {
+  padding: 10 px;
+  background-color: rgb(170, 214, 255);
+}
+
+div {
+  padding: 10 px;
+  background-color: rgb(170, 214, 255);
+}
+
+#checkinMap{
+  height:240px;
+  margin:8px 0px;
+}

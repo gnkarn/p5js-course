@@ -1,5 +1,5 @@
 // https://data.giss.nasa.gov/gistemp/
-
+// cCARGA  la  TEMPERATURA PROMEDIO DEL MAR registrada en la historia
 let ctx;
 
 function setup() {
